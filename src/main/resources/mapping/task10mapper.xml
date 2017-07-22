@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ljm.dao.task10dao">
+
+    <!--登陆查询匹配信息-->
+    <!--仅仅用到查的功能-->
+    <!--登陆查询匹配信息-->
+    <select id="Login" resultType="com.ljm.model.Task10" >
+        SELECT * FROM task10 WHERE name =#{name} AND password=#{password}
+    </select>
+    <!--查看所有学生-->
+    <select id="selectAllStudent"  resultType="com.ljm.model.Task10" >
+        SELECT * FROM task10
+    </select>
+
+<!--查看学生id-->
+    <select id="getStudentById" parameterType="int" resultType="com.ljm.model.Task10">
+       SELECT * FROM task10 WHERE id=#{id}
+    </select>
+
+    <!--添加学生-->
+    <insert id="addStudent" useGeneratedKeys="true" keyProperty="id" parameterType="com.ljm.model.Task10">
+        INSERT INTO task10  (name,password,hope,course,date,school,qq,yinjian,shenhe,create,update,phone,company)
+        VALUE (#{name},#{password},#{hope},#{course},#{date},#{school},#{qq},#{yinjian},#{shenhe},#{create},#{update},#{phone},#{company})
+    </insert>
+
+    <!--删除学生信息-->
+    <delete id="deleteStudentById" parameterType="int">
+        DELETE FROM task10 WHERE  id=#{id}
+    </delete>
+
+    <!--修改学生信息-->
+    <update id="updateStudentById" parameterType="com.ljm.model.Task10">
+        UPDATE task10
+        SET name=#{task10.name},password=#{task10.password},hope=#{task10.hope},course=#{task10.course},date=#{task10.date},school=#{task10.school},
+        qq=#{task10.qq},yinjian=#{task10.yinjian},shenhe=#{task10.shenhe},create=#{task10.create},update=#{task10.update},phone=#{task10.phone},company=#{task10.company}
+        WHERE id=#{Student.id}
+    </update>
+
+    <select id="getUserIdList"  resultType="long">
+        SELECT id FROM task10
+    </select>
+
+    <select id="select" parameterType="long"  resultType="com.ljm.model.Task10">
+        SELECT * FROM task10 WHERE id=#{id}
+    </select>
+</mapper>

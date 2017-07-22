@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ljm.dao.task11dao">
+
+<select id="get11" resultType="com.ljm.model.task11">
+select * from task11 WHERE head=#{head}
+</select>
+
+
+
+    <!--字段的值汇总-->
+    <select id="get" resultType="com.ljm.model.task11">
+
+    </select>
+</mapper>

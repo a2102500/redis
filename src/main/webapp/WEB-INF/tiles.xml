@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <!--主布局-->
+    <!--template意为模板 -->
+    <definition name="base.definition" template="/WEB-INF/layout/template.jsp">
+        <put-attribute name="title" value="/WEB-INF/layout/home-head.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+        <put-attribute name="boby" value="/WEB-INF/jsp/home.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+    <!--主布局-->
+    <!--项目-->
+    <definition name="layout/template" extends="base.definition">
+        <put-attribute name="title" value="/WEB-INF/layout/home-head.jsp"/>
+        <put-attribute name="boby" value="/WEB-INF/jsp/home.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+    <!--项目-->
+</tiles-definitions>
